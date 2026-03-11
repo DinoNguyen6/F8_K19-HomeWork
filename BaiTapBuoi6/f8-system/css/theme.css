@@ -1,0 +1,14 @@
+/* Override mau cua .title */
+.title {
+    color: darkblue;
+}
+
+/* Override mau cua h2 */
+h2 {
+    color: darkred;
+}
+
+/* Override mau cua #special */
+#special {
+    color: gold;
+}
