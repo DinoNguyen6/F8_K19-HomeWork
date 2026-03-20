@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+    <!--https://api-gateway.f8.edu.vn/action_page.php-->
+<body>
+    <form method="post" action="https://api-gateway.f8.edu.vn/action_page.php">
+        <div>
+            <label for="name">Ho & Ten</label>
+            <input id="name" name="name" placeholder="Tran Van A" maxlength="10" minlength="2">
+        </div>
+
+        <div>
+            <label for="email">email</label>
+        <!--      readonly:  của HTML có tác dụng chính là ngăn chặn người dùng chỉnh sửa nội dung của ô nhập liệu, nhưng vẫn cho phép họ quan sát và tương tác ở mức độ cơ bản.     -->
+            <input id="email" name="email" type="email" placeholder="huubang16@jsfjs" readonly>
+        </div>
+
+        <div>
+            <label for="age">Tuoi</label>
+            <input id="age" name="age" placeholder="50" value="50" type="number">
+        </div>
+
+        <div>
+            <label for="address">Dia chi</label>
+            <input id="address" name="address" placeholder="Tay Ho">
+        </div>
+
+        <div>
+            <label>Ban da biet nhung nn lap trinh nao???</label>
+            <br>
+
+            <input id="python" type="checkbox" name="lang[]" value="python">
+            <label for="python">Python</label>
+            <br>
+
+            <input id="java" type="checkbox" name="lang[]" value="java">
+            <label for="java">Java</label>
+            <br>
+
+            <input id="c++" type="checkbox" name="lang[]" value="c++">
+            <label for="c++">C++</label>
+        </div>
+
+        <div>
+            <lable>Ban muon hoc khoa hoc nao???</lable>
+            <br>
+
+            <input id="frontend" type="radio" name="course" value="frontend">
+            <label for="frontend">Frontend</label>
+            <br>
+
+            <input id="backend" type="radio" name="course" value="backend">
+            <lable for="backend">Backend</lable>
+            <br>
+
+            <input id="fullstack" type="radio" name="course" value="fullstack">
+            <label for="fullstack">FullStack</label>
+        </div>
+
+        <div>
+            <label for="avatar">anh dai dien</label>
+            <!--      multiple      -->
+            <!-- Chọn nhiều ảnh hoặc tài liệu -->
+            <!-- Nhập nhiều email, ví dụ: a@test.com, b@test.com -->
+            <input id="avatar" type="file" multiple>
+        </div>
+
+        <div>
+            <label>Ban muon hoc thoi gian nao</label>
+            <br>
+            <select name="time" id="time">
+                <option value="morning">Sang</option>
+                <option value="afternoon">Chieu</option>
+                <option value="evening">Toi</option>
+            </select>
+        </div>
+
+        <textarea name="note" id="" cols="30" rows="10">
+            Chao buoi sang anh em
+            AE khoe khong????
+        </textarea>
+
+        <div>
+            <label for="password">password</label>
+            <input id="password" type="password" name="password" placeholder="******">
+        </div>
+
+        <div>
+            <input name="range" type="range" max="200" min="100">
+        </div>
+
+        <div>
+            <input type="submit" value="OK">
+            <button type="reset">reset</button>
+        </div>
+    </form>
+</body>
+</html>
