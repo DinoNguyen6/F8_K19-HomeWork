@@ -313,7 +313,7 @@ css
 form / button / input / label / select - option
 
 input:
-    placeholder: goi ys xem o day nhap cai j
+    placeholder: goi y xem o day nhap cai j
     value: gia tri se dc dien mac dinh vao input
     name:
         ten cua input
