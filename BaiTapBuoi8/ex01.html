@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!--
+    Text(typography) là một phần quan trọng trong thiết kế web. Nó không chỉ giúp truyền đạt thông tin mà còn tạo nên phong cách và cảm xúc cho trang web. Dưới đây là một số yếu tố quan trọng của typography trong thiết kế web:
+    - font-size: kích thước của chữ
+    - px, rem, em, %, vw, vh: các đơn vị đo kích thước chữ
+    - px, rem, em (phổ biến)
+    - Sử dụng nhiều nhất rem
+-->
+<!--
+    - html -> root toàn bộ trang web, font-size mặc định là 16px
+    - 1rem = 16px
+    - 1em = font-size của phần tử cha
+    - 1% = 1% của font-size của phần tử cha
+    - 1vw = 1% của chiều rộng viewport
+    - 1vh = 1% của chiều cao viewport
+-->
+<!--
+    - Đơn vị tuyệt đối:
+        + px -> Tuyệt đối bất di bất dịch
+        + mm, cm, in -> Dùng trong in ấn
+    - Đơn vị tương đối:
+        + rem -> Dựa trên font-size của phần tử gốc (html)
+        + em -> Dựa trên font-size của phần tử cha -> có font-size ko phải là em
+        + % -> Phụ thuộc đơn vị có thuộc tính là tuyệt đối px (phần tử cha). Nếu ko có phần tử cha nào thì nó là đơn vị tuyệt đối của trình duyệt chiều ngang (HTML)
+        + vw
+            - viewport -> Chiều ngang khung hình
+            1vw = 1% chiều rộng của khung hình
+        + vh
+            - view-height   -> Chiều cao khung hình
+            - 1vh = 1% chiều cao của khung hình
+            - Build In -> Css có sãn
+            - calc(100px - 3px) -> hợp lệ
+-->
+<!--
+    Tổng kết:
+    - Đơn vị tuyệt đối: px
+        + Trong trường hợp bất di bất dịch ko muốn thay đổi chiều rộng và chiều cao của phần tử
+        + 1 Nếu như hộp chiều rộng và chiều dài ko thay nếu như có kéo trình duyệt: px
+    - Đơn vị tương đối: %
+        + Trong trường bạn muốn thay đổi kích thước khi cố kéo trình duyệt thì sử dụng -> %
+    - Đơn vị tương đối rem:
+        + chữ, padding, margin -> rem tailwind, css, bootstrap 5
+        + 1 rem = 16px -> 10 / 16 = 0.625 x 100% = 62.5%
+        2 rem = 2 x 16 = 32px
+        html -> font-size = 62.5% -> phụ thuộc đơn vị tuyệt đối 16px
+        2 rem = 2 x 10 = 20px
+    - Đơn vị tương đối rem: Kế gồi đầu không phải tuyệt đối -> ít dùng (Không sử dụng) -> Biết các hoạt động
+    - Đơn vị vw, hw -> khi các bạn muốn các phần tử đó chiều rộng và chiều cao toàn bộ khung hình sử dụng nó
+    -> positiom: rời bộ cục luồng
+-->
+<style>
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

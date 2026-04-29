@@ -7,114 +7,177 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PERSONAL PROFILE CUSTOMIZER</title>
     <style>
+        /*  CSS common  */
+        :root {
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
         .layout {
-            width: 100%;
+            background-color: #eee;
+            width: 100vw;
+            min-height: 100vh;
+            font-size: 0;
         }
-        /*   control-panel   */
         .control-panel {
-            width: 30%;
-        }
-        .control-panel-item h4 {
-            margin: 0px;
-            font-weight: normal;
-        }
-        .control-panel-item p{
             display: inline-block;
-            margin: 3px;
-            padding: 5px;
-            background-color: #bbb;
+            vertical-align: top;
+            background-color: #f5f5f5;
+            width: calc(100vw - 62vw);
+            font-size: 1.6rem;
         }
-
-        /*  preview-area    */
-        .preview-area {
-            width: 75%;
+        .preview-are {
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            width: calc(100vw - 40vw);
+            font-size: 1.6rem;
+            padding: 0.25em
+        }
+        input {
+            display: none;
+        }
+        table + label {
+            padding: 0.3em;
+            background-color: #ddd;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="layout">
+        <!--   Màu nền hồ sơ    -->
+        <input type="radio" name="bg" id="bg-light" hidden>
+        <input type="radio" name="bg" id="bg-gray" hidden>
+        <input type="radio" name="bg" id="bg-yellow" hidden>
+        <input type="radio" name="bg" id="bg-blue" hidden>
+        <input type="radio" name="bg" id="bg-pink" hidden>
+        <!--   Kích thước tên    -->
+        <input type="radio" name="name-size" id="name-small" hidden>
+        <input type="radio" name="name-size" id="name-medium" hidden>
+        <input type="radio" name="name-size" id="name-large" hidden>
+        <!--   Kiểu chữ tên    -->
+        <input type="radio" name="name-style" id="name-normal" hidden>
+        <input type="radio" name="name-style" id="name-uppercase" hidden>
+        <!--   Màu chữ tên    -->
+        <input type="radio" name="name-color" id="name-dark" hidden>
+        <input type="radio" name="name-color" id="name-blue" hidden>
+        <input type="radio" name="name-color" id="name-green" hidden>
+        <input type="radio" name="name-color" id="name-red" hidden>
+        <!--   Can lề hồ sơ     -->
+        <input type="radio" name="align" id="align-left" hidden>
+        <input type="radio" name="align" id="align-center" hidden>
+        <input type="radio" name="align" id="align-right" hidden>
+        <!--   Kích thước nghề nghiệp    -->
+        <input type="radio" name="job-size" id="job-small" hidden>
+        <input type="radio" name="job-size" id="job-medium" hidden>
+        <input type="radio" name="job-size" id="job-large" hidden>
+        <!--   Khoảng cách chữ nghề nghiệp     -->
+        <input type="radio" name="job-spacing" id="job-tight" hidden>
+        <input type="radio" name="job-spacing" id="job-normal" hidden>
+        <input type="radio" name="job-spacing" id="job-wide" hidden>
+        <!--   Kích thước mô tả     -->
+        <input type="radio" name="desc-size" id="desc-small" hidden>
+        <input type="radio" name="desc-size" id="desc-medium" hidden>
+        <input type="radio" name="desc-size" id="desc-large" hidden>
+        <!--   Dãn dòng mô tả     -->
+        <input type="radio" name="desc-spacing" id="desc-tight" hidden>
+        <input type="radio" name="desc-spacing" id="desc-normal" hidden>
+        <input type="radio" name="desc-spacing" id="desc-loose" hidden>
+        <!--   Màu nút liên hệ     -->
+        <input type="radio" name="btn-color" id="btn-dark" hidden>
+        <input type="radio" name="btn-color" id="btn-blue" hidden>
+        <input type="radio" name="btn-color" id="btn-light" hidden>
+        
         <div class="control-panel">
-            <div>
-                <h3>Tùy chỉnh hồ sơ</h3>
-                <div class="control-panel-item">
-                    <h4>1. Màu sắc hồ sơ</h4>
-                    <p>Light</p>
-                    <p>Gray</p>
-                    <p>Yellow</p>
-                    <p>
-                        <b>Blue</b>
-                    </p>
-                    <p>Pink</p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>2. Kích thước tên</h4>
-                    <p>Small</p>
-                    <p>
-                        <b>Medium</b>
-                    </p>
-                    <p>Large</p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>3. Kiểu tên chữ</h4>
-                    <p>Normal</p>
-                    <p>
-                        <b>Uppercase</b>
-                    </p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>4. Màu chữ tên</h4>
-                    <p>Dark</p>
-                    <p>
-                        <b>Blue</b>
-                    </p>
-                    <p>Green</p>
-                    <p>Red</p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>5. Căn lề hồ sơ</h4>
-                    <p>Left</p>
-                    <p>
-                        <b>Center</b>
-                    </p>
-                    <p>Right</p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>6. Kích thước nghề nghiệp</h4>
-                    <p>Small</p>
-                    <p>Medium</p>
-                    <p>
-                        <b>Large</b>
-                    </p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>7. Khoảng cách chữ nghề nghiệp</h4>
-                    <p>Tight</p>
-                    <p>
-                        <b>Normal</b>
-                    </p>
-                    <p>Wide</p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>8. Kích thước mô tả</h4>
-                    <p>Tight</p>
-                    <p>Normal</p>
-                    <p>
-                        <b>Loose</b>
-                    </p>
-                </div>
-                <div class="control-panel-item">
-                    <h4>10. Màu nút liên hệ</h4>
-                    <p>Dark</p>
-                    <p>
-                        <b>Blue</b>
-                    </p>
-                    <p>Light</p>
-                </div>
-            </div>
+            <p class="control-title">Tùy chỉnh hồ sơ</p>
+            <ol>
+                <li>Màu nền hồ sơ</li>
+                <button><label for="bg-light">Light</label></button>
+                <button><label for="bg-gray">Gray</label></button>
+                <button><label for="bg-yellow">Yellow</label></button>
+                <button><label for="bg-blue">Blue</label></button>
+                <button><label for="bg-pink">Pink</label></button>
 
+                <li>Kích thước tên</li>
+                <button><label for="name-small">Small</label></button>
+                <button><label for="name-medium">Medium</label></button>
+                <button><label for="name-large">Large</label></button>
+
+                <li>Kiểu chữ tên</li>
+                <button><label for="name-normal">Normal</label></button>
+                <button><label for="name-uppercase">Uppercase</label></button>
+
+                <li>Màu chữ tên</li>
+                <button><label for="name-dark">Dark</label></button>
+                <button><label for="name-blue">Blue</label></button>
+                <button><label for="name-green">Green</label></button>
+                <button><label for="name-red">Red</label></button>
+
+                <li>Căn lề hồ sơ</li>
+                <button><label for="align-left">Left</label></button>
+                <button><label for="align-center">Center</label></button>
+                <button><label for="align-right">Right</label></button>
+
+                <li>Kích thước nghề nghiệp</li>
+                <button><label for="job-small">Small</label></button>
+                <button><label for="job-medium">Medium</label></button>
+                <button><label for="job-large">Large</label></button>
+
+                <li>Khoảng cách chữ nghề nghiệp</li>
+                <button><label for="job-tight">Tight</label></button>
+                <button><label for="job-normal">Normal</label></button>
+                <button><label for="job-wide">Wide</label></button>
+
+                <li>Kích thước mô tả</li>
+                <button><label for="desc-small">Small</label></button>
+                <button><label for="desc-medium">Medium</label></button>
+                <button><label for="desc-large">Large</label></button>
+
+                <li>Giãn dòng mô tả</li>
+                <button><label for="desc-tight">Tight</label></button>
+                <button><label for="desc-normal">Normal</label></button>
+                <button><label for="desc-loose">Loose</label></button>
+
+                <li>Màu nút liên hệ</li>
+                <button><label for="btn-dark">Dark</label></button>
+                <button><label for="btn-blue">Blue</label></button>
+                <button><label for="btn-light">Light</label></button>
+            </ol>
         </div>
-        <div class="preview-area">
 
+        <div class="preview-are">
+            <p class="preview-title">Preview hồ sơ cá nhân</p>
+            <div class="profile-card">
+                <p class="profile-name">Nguyễn Minh Khoa</p>
+                <p class="profile-job">Frontend Developer · Ho Chi Minh City</p>
+                <p class="profile-desc">
+                    Tôi là một lập trình viên Frontend với hơn 3 năm kinh nghiệm xây dựng giao diện web hiện đại,
+                    tập trung vào hiệu suất và trải nghiệm người dùng. Tôi yêu thích việc biến ý tưởng sáng tạo thành
+                    sản phẩm thực tế.
+                </p>
+                <p>Kỹ năng</p>
+                <div class="skill-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+
+                <p>Sở thích</p>
+                <div class="hobby-list">
+                    <span>Nhiếp ảnh</span>
+                    <span>Đọc sách</span>
+                    <span>Du lịch</span>
+                    <span>Cà phê</span>
+                </div>
+
+                <button class="btn-contact">Liên hệ với tôi</button>
+            </div>
         </div>
     </div>
 </body>
