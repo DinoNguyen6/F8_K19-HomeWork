@@ -9,59 +9,177 @@
     <style>
         /*  CSS common  */
         :root {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
             font-size: 62.5%;
-            height: 100vh;
-            width: 100vw;
+            box-sizing: border-box;
         }
         body {
             margin: 0;
         }
         .layout {
             background-color: #eee;
-            width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
             font-size: 0;
         }
-        .control-panel {
+        .control-panel, .preview-area{
             display: inline-block;
             vertical-align: top;
-            /*background-color: #f5f5f5;*/
-            width: calc(100vw - 65vw);
+            min-height: 100vh;
+        }
+        .control-panel {
+            width: calc(100vw - 70vw);
             height: 100vh;
             font-size: 1.6rem;
-            margin: 10px 20px 0 8px;
-            background-color: #7f1d1d;
+            /*margin: 10px 20px 0 8px;*/
+            margin: 20px 20px;
+            background-color: #f5f5f5;
         }
-        .preview-are {
-            display: inline-block;
-            /*text-align: center;*/
-            /*vertical-align: top;*/
+        .preview-area {
             height: 100vh;
             width: calc(100vw - 40vw);
             font-size: 1.6rem;
-            /*padding: 0.25em;*/
-            background-color: #1d4ed8;
-
         }
-        .profile-card {
-            text-align: center;
+        .layout .control-panel ol {
+            padding: 0 10px 10px 50px;
         }
-        input {
-            display: none;
+        .control-title {
+            padding: 10px 20px;
         }
-        button + label {
-            padding: 0.3em;
+        .control-panel li {
+            margin-top: 10px;
+        }
+        .control-panel button {
+            border-style: none;
+            font-size: inherit;
+            padding: 0.2em 0.6em;
+            margin-left: 5px;
+            margin-top: 8px;
             background-color: #ddd;
+        }
+        .control-panel label {
             cursor: pointer;
         }
-        input:checked label {
-            font-weight: 600;
+        .preview-title {
+            padding: 10px 20px;
         }
+        .profile-card {
+            width: 100%;
+            min-height: 100vh;
+            padding: 2em 2em;
+            margin-left: 20px;
+        }
+        .profile-name {
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .skill-list {
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .skill-tag {
+            padding: 0.3rem 0.3rem;
+            background-color: #f0f0f0;
+        }
+        .btn-contact {
+            border-style: none;
+            font-size: inherit;
+            padding: 0.2em 0.6em;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /*Mau nen ho so*/
+        #bg-light:checked~.preview-area .profile-card {
+            background: white;
+        }
+        #bg-gray:checked~.preview-area .profile-card {
+            background-color: lightgray;
+        }
+        #bg-yellow:checked~.preview-area .profile-card {
+            background-color: lightyellow;
+        }
+
+        #bg-blue:checked~.preview-area .profile-card {
+            background-color: lightblue;
+        }
+        #bg-pink:checked~.preview-area .profile-card {
+            background-color: pink;
+        }
+
+        /*Kich thuoc ten*/
+        #name-small:checked~.preview-area .profile-card .profile-name {
+            font-size: 0.8rem;
+        }
+        #name-medium:checked~.preview-area .profile-card .profile-name {
+            font-size: inherit;
+        }
+        #name-large:checked~.preview-area .profile-card .profile-name {
+            font-size: 2.75rem;
+        }
+
+        /*Kieu chu ten*/
+        #name-normal:checked~.preview-area .profile-card .profile-name {
+            text-transform: none;
+        }
+        #name-uppercase:checked~.preview-area .profile-card .profile-name {
+            text-transform: uppercase;
+        }
+
+        /*Mau chu ten*/
+        #name-dark:checked~.preview-area .profile-card .profile-name {
+            color: #12122;
+        }
+        #name-blue:checked~.preview-area .profile-card .profile-name {
+            color: blue;
+        }
+        #name-green:checked~.preview-area .profile-card .profile-name {
+            color: green;
+        }
+        #name-red:checked~.preview-area .profile-card .profile-name {
+            color: red;
+        }
+
+        /*Can le ho so*/
+        #align-left:checked~.preview-area .profile-card {
+            text-align: left;
+        }
+        #align-center:checked~.preview-area .profile-card {
+            text-align: center;
+        }
+        #align-right:checked~.preview-area .profile-card {
+            text-align: right;
+        }
+
+        /*Kich thuoc nghe nghiep*/
+        #job-small:checked~.preview-area .profile-job {
+            font-size: 0.8rem;
+        }
+        #job-medium:checked~.preview-area .profile-job {
+            font-size: inherit;
+        }
+        #job-large:checked~.preview-area .profile-job {
+            font-size: 1.3rem;
+        }
+
+        /*Khoang cach chu nghe nghiep*/
+        #job-tight:checked~.preview-area .profile-job {
+            letter-spacing: ;
+        }
+
+
+        /*.profile-card {*/
+        /*    text-align: center;*/
+        /*}*/
+        /*input {*/
+        /*    display: none;*/
+        /*}*/
+        /*button + label {*/
+        /*    padding: 0.3em;*/
+        /*    background-color: #ddd;*/
+        /*    cursor: pointer;*/
+        /*}*/
+        /*input:checked label {*/
+        /*    font-weight: 600;*/
+        /*}*/
 
     </style>
 </head>
@@ -167,7 +285,7 @@
             </ol>
         </div>
 
-        <div class="preview-are">
+        <div class="preview-area">
             <p class="preview-title">Preview hồ sơ cá nhân</p>
             <div class="profile-card">
                 <p class="profile-name">Nguyễn Minh Khoa</p>
