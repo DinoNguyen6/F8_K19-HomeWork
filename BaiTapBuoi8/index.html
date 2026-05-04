@@ -126,7 +126,7 @@
 
         /*Mau chu ten*/
         #name-dark:checked~.preview-area .profile-card .profile-name {
-            color: #12122;
+            color: dark;
         }
         #name-blue:checked~.preview-area .profile-card .profile-name {
             color: blue;
@@ -157,15 +157,36 @@
             font-size: inherit;
         }
         #job-large:checked~.preview-area .profile-job {
-            font-size: 1.3rem;
+            font-size: 1.8rem;
         }
 
         /*Khoang cach chu nghe nghiep*/
         #job-tight:checked~.preview-area .profile-job {
-            letter-spacing: ;
+            letter-spacing: -0.03em;
+        }
+        #job-normal:checked~.preview-area .profile-job {
+            letter-spacing: 0.02em;
+        }
+        #job-wide:checked~.preview-area .profile-job {
+            letter-spacing: 0.18em;
         }
 
+        /*Kich thuoc mo ta*/
+        #desc-small:checked~.preview-area .profile-desc {
+            font-size: 0.9rem;
+        }
+        #desc-medium:checked~.preview-area .profile-desc {
+            font-size: inherit;
+        }
+        #desc-large:checked~.preview-area .profile-desc {
+            font-size: 1.8rem;
+        }
 
+        /*Gian dong mo ta*/
+        #desc-tight:checked~.preview-area .profile-desc {
+            letter-spacing: 0.03em
+        }
+        #desc-normal:checked~.preview-area .profile-desc {}
         /*.profile-card {*/
         /*    text-align: center;*/
         /*}*/
@@ -219,7 +240,7 @@
         <input type="radio" name="desc-size" id="desc-small" hidden>
         <input type="radio" name="desc-size" id="desc-medium" hidden>
         <input type="radio" name="desc-size" id="desc-large" hidden>
-        <!--   Dãn dòng mô tả     -->
+        <!--   Gian dòng mô tả     -->
         <input type="radio" name="desc-spacing" id="desc-tight" hidden>
         <input type="radio" name="desc-spacing" id="desc-normal" hidden>
         <input type="radio" name="desc-spacing" id="desc-loose" hidden>
