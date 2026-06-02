@@ -27,38 +27,54 @@ const orders = [
         ]
     }
 ]
-const highestProfitProduct=()=>{
-    const hashMapProductsDetails= new Map();
-    //loop through products to get product details
-    for(let i=0;i<products.length;i++){
-        hashMapProductsDetails.set(products[i].id,products[i]);
-    }
-    const hashMapProfitDetails=new Map();
-    //loop through orders to get name and profit
-    for(let i=0;i<orders.length;i++){
-        for(let j=0;j<orders[i].items.length;j++){
-            const currentOrder=orders[i].items[j];
 
-            const currentProduct=hashMapProductsDetails.get(currentOrder.productId);
 
-            const profit=currentOrder.quantity*currentProduct.price;
+function getTopRevenueProduct(products, orders) {
+    // Lưu doanh thu của từng sản phẩm
+    const revenueByProduct = {};
 
-            let oldProfit=hashMapProfitDetails.get(currentProduct.name)||0;
+    // Duyệt từng đơn hàng
+    for (let i = 0; i < orders.length; i++) {
+        const order = orders[i];
 
-            hashMapProfitDetails.set(currentProduct.name,oldProfit+profit);
+        // Duyệt từng sản phẩm trong đơn hàng
+        for (let j = 0; j < order.items.length; j++) {
+            const item = order.items[j];
+
+            // Tìm thông tin sản phẩm
+            const product = products.find(function (p) {
+                return p.id === item.productId;
+            });
+
+            // Doanh thu của lần bán này
+            const revenue = product.price * item.quantity;
+
+            // Nếu chưa có thì khởi tạo
+            if (!revenueByProduct[product.id]) {
+                revenueByProduct[product.id] = {
+                    productName: product.name,
+                    revenue: 0
+                };
+            }
+
+            // Cộng dồn doanh thu
+            revenueByProduct[product.id].revenue += revenue;
         }
-    };
-    // loop to get highest profit product
-    let nameHighest="";
-    let highestProfit=0;
-    for(let [name,profit] of hashMapProfitDetails){
-        if(profit>highestProfit){
-            nameHighest=name;
-            highestProfit=profit;
+    }
+
+    // Tìm sản phẩm doanh thu cao nhất
+    let topProduct = null;
+
+    for (let productId in revenueByProduct) {
+        if (
+            topProduct === null ||
+            revenueByProduct[productId].revenue > topProduct.revenue
+        ) {
+            topProduct = revenueByProduct[productId];
         }
     }
 
-    console.log(`Sản phẩm có doanh thu cao nhất là : Sản phẩm ${nameHighest} với doanh thu là ${highestProfit}`);
-
+    return topProduct;
 }
-highestProfitProduct();
+
+console.log(getTopRevenueProduct(products, orders));
